@@ -46,3 +46,28 @@ void setup() {
  * 4. Calculates distance in centimeters
  * 5. Prints distance to Serial Monitor
  */
+
+void loop() {
+
+  // Ensure trigger pin is LOW
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  // Send 10 microsecond pulse to start measurement
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Measure time for echo to return
+  duration = pulseIn(echoPin, HIGH);
+
+  // Calculate distance (cm)
+  distance = duration * 0.034 / 2;
+
+  // Print result
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  delay(500);
+}
