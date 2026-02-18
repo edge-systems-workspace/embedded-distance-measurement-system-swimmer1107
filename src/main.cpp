@@ -21,3 +21,17 @@ int echoPin = 10;  ///< Echo pin connected to digital pin 10
 
 long duration;     ///< Stores the time taken for echo to return (in microseconds)
 float distance;    ///< Stores calculated distance in centimeters
+
+/**
+ * @brief Initializes serial communication and pin modes.
+ *
+ * Sets:
+ * - Trigger pin as OUTPUT
+ * - Echo pin as INPUT
+ * - Serial communication at 9600 baud rate
+ */
+void setup() {
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
