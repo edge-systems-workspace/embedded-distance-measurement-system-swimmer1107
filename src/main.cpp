@@ -35,3 +35,14 @@ void setup() {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
 }
+
+/**
+ * @brief Continuously measures distance and prints it.
+ *
+ * Steps:
+ * 1. Clears trigger pin
+ * 2. Sends 10µs HIGH pulse to trigger ultrasonic burst
+ * 3. Measures echo return time using pulseIn()
+ * 4. Calculates distance in centimeters
+ * 5. Prints distance to Serial Monitor
+ */
